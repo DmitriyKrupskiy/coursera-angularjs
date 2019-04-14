@@ -41,10 +41,11 @@ function MenuDataService($q, $http, ApiBasePath) {
 	};*/
 	
 	service.getItemsForCategory = function (shortName) {
-		var deferred = $q.defer();
+		console.log("sort_name" + shortName);
+		
 		var response = $http({
 		  method: "GET",
-		  url: (ApiBasePath + "/menu_items.json"),
+		  url: (ApiBasePath + "/menu_items.json?category="),
 		  params: {
 			category: shortName
 		  }
